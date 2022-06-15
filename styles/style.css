@@ -21,11 +21,12 @@ body{
 }
 
 .title_mobile {
+    background-color: red;
     margin-top: 40px;
     display: none;
     text-align: center;
     margin: 20px auto;
-    width: 80%;
+    width: 55%;
     color: #75B79E;
     font-family: Roboto;
     font-size: 36px;
@@ -33,7 +34,6 @@ body{
 }
 
 .table_desktop{
-    background-color: red;
     margin-top: 50px;
     margin-left:auto;
     margin-right: auto;
@@ -48,8 +48,6 @@ body{
 }
 
 .table_mobile{
-    background-color: red;
-    background-color: red;
     margin-top: 50px;
     margin-left:auto;
     margin-right: auto;
@@ -69,23 +67,49 @@ body{
     background-color: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .card img{
     width: 100%;
     align-self: center;
+    justify-self: center;
 }
 
 .card_front{
     content: url(/assets/front.png);
 }
 
-.card_back {
-    background-color: violet;
+.ross{
+    content: url(/assets/bobrossparrot.gif);
 }
 
-.card_back img{
-    src: url()
+.explody{
+    content: url(/assets/explodyparrot.gif);
+}
+
+.fiesta{
+    content: url(/assets/fiestaparrot.gif);
+}
+
+.metal{
+    content: url(/assets/metalparrot.gif);
+}
+
+.triplets{
+    content: url(/assets/tripletsparrot.gif);
+}
+
+.unicorn{
+    content: url(/assets/unicornparrot.gif);
+}
+
+.revertit{
+    content: url(/assets/revertitparrot.gif);
+}
+
+.hidden{
+    display: none;
 }
 
 
