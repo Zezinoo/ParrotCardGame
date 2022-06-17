@@ -7,7 +7,7 @@ const table = document.querySelector(".table_desktop");
 
 while(N_card%2 !==0 || N_card < 4 || N_card > 14){
     console.log(N_card)
-    N_card = prompt("Insira o numero de cartas para jogar:")
+    N_card = prompt("Insira um numero de cartas para jogar(Entre 2 a 14):")
 }
 
 for (let i = 0 ; i< N_card ; i++){
