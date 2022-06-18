@@ -28,6 +28,10 @@ addSortedCards();
 
 function checkMatch(){
     if(play_counter%2===0 && play_counter!==0){
+        let cardList = document.querySelectorAll("div.card")
+        for (let i = 0 ; i < cardList.length ; i++){
+            cardList[i].setAttribute("onclick","")
+        }
         let turned_List = document.querySelectorAll(".turned:not(.found)")
         const first_pair_image = turned_List[0].children[1].firstChild.classList[0]
         const second_pair_image = turned_List[1].children[1].firstChild.classList[0]
@@ -39,11 +43,11 @@ function checkMatch(){
         else{
             setTimeout(() => {turnCard(turned_List[0]);}, 1000);
             setTimeout(() => {turnCard(turned_List[1]);}, 1000);
-            setTimeout(() => {turned_List[0].setAttribute("onclick",'makePlay(this)');},1001)
-            setTimeout(() => {turned_List[1].setAttribute("onclick",'makePlay(this)');},1001)
-
         }
-
+        cardList = document.querySelectorAll("div.card:not(.found)")
+        for (let i = 0 ; i< cardList.length;i++){
+            setTimeout(() => {cardList[0].setAttribute("onclick",'makePlay(this)');},1001)
+        }
     }
 }
 
