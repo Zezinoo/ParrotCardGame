@@ -7,7 +7,7 @@ const table = document.querySelector(".table_desktop");
 
 while(N_card%2 !==0 || N_card < 4 || N_card > 14){
     console.log(N_card)
-    N_card = prompt("Insira um numero de cartas para jogar(Entre 2 a 14):")
+    N_card = prompt("Insira um numero par de cartas para jogar(Entre 2 a 14):")
 }
 
 for (let i = 0 ; i< N_card ; i++){
@@ -37,10 +37,10 @@ function checkMatch(){
             turned_List[1].classList.add("found")
         }
         else{
-            setTimeout(() => {turn(turned_List[0]);}, 1000);
-            setTimeout(() => {turn(turned_List[1]);}, 1000);
-            setTimeout(() => {turned_List[0].setAttribute("onclick",'turnCard(this)');},1001)
-            setTimeout(() => {turned_List[1].setAttribute("onclick",'turnCard(this)');},1001)
+            setTimeout(() => {turnCard(turned_List[0]);}, 1000);
+            setTimeout(() => {turnCard(turned_List[1]);}, 1000);
+            setTimeout(() => {turned_List[0].setAttribute("onclick",'makePlay(this)');},1001)
+            setTimeout(() => {turned_List[1].setAttribute("onclick",'makePlay(this)');},1001)
 
         }
 
@@ -88,11 +88,11 @@ function addCard(){
     card.appendChild(card_back);
     card_front.appendChild(front_image);
     card_back.appendChild(back_image);
-    card.setAttribute("onclick",'turnCard(this)')
+    card.setAttribute("onclick",'makePlay(this)')
 }
 
-function turnCard(element){
-    turn(element)
+function makePlay(element){
+    turnCard(element)
     play_counter++ 
     console.log(play_counter)
     checkMatch();
@@ -100,7 +100,7 @@ function turnCard(element){
     checkGameEnd();
 }
 
-function turn(element){
+function turnCard(element){
     element.classList.toggle("turned")
     element.setAttribute("onclick","")
 }
