@@ -1,4 +1,5 @@
 
+let time_counter = 0;
 let play_counter = 0;
 let N_card = 1;
 let arr = ["ross","explody","fiesta","metal","triplets","unicorn","revertit"]
@@ -7,7 +8,7 @@ const table = document.querySelector(".table_desktop");
 
 while(N_card%2 !==0 || N_card < 4 || N_card > 14){
     console.log(N_card)
-    N_card = prompt("Insira um numero par de cartas para jogar(Entre 2 a 14):")
+    N_card = prompt("Insira um numero par de cartas para jogar(Entre 4 a 14):")
 }
 
 for (let i = 0 ; i< N_card ; i++){
@@ -24,7 +25,9 @@ addSortedCards();
 
 
 
-
+function count_time(){
+    setInterval(1000,)
+}
 
 function checkMatch(){
     if(play_counter%2===0 && play_counter!==0){
@@ -46,7 +49,7 @@ function checkMatch(){
         }
         cardList = document.querySelectorAll("div.card:not(.found)")
         for (let i = 0 ; i< cardList.length;i++){
-            setTimeout(() => {cardList[0].setAttribute("onclick",'makePlay(this)');},1001)
+            setTimeout(() => {cardList[i].setAttribute("onclick",'makePlay(this)');},1001)
         }
     }
 }
